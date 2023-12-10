@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="295129.png" type="image/png">
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+            text-transform: none;
+            transition: all 0.7s;
+            scroll-behavior: smooth;
+        }
+        header{
+            height: 100px;
+        }
+        nav{
+            height: 100px;
+            background-color: whitesmoke;
+            position: fixed;
+            width: 100%;
+            box-shadow: 4px 4px 4px #888888;
+            font-family: monospace;
+            z-index: 1000;
+        }
+        .couleur-rouge{
+            color: rgb(189, 0, 0);
+        }
+        label#logo{
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 100px;
+            margin: 30px;
+        }
+        ul{
+            float: right;
+            margin-right: 30px;
+            transition: all 1s;
+        }
+        li{
+            display: inline-block;
+            line-height: 100px;
+            font-size: 20px;
+            margin: 0 20px;
+        }
+        a{
+            text-transform: uppercase;
+            color: black;
+            font-weight: bold;
+            padding: 9px;
+        }
+        .menu{
+            float: right;
+            margin: 25px;
+            display: none;
+        }
+        #check{
+            display: none;
+        }
+        a.active,a:hover{
+            background-color: rgb(189, 0, 0);
+            color: white;
+        }
+/* *****************************Media******************************** */
+
+         .conteneur{
+            display: flex;
+            background-color: whitesmoke;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+         }
+         section.un-mot{
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            margin-left: 5%;
+            animation: animation1 1.5s;
+         }
+          section.un-mot P{
+            font-size: 20px;
+            margin-bottom: 5px;
+          }
+          section.un-mot h1{
+            font-size: 40px;
+            margin-bottom: 5px;
+          }
+          @keyframes animation1 {
+            0%{
+                opacity: 0;
+                transform: translateX(-50%);
+            }
+            100%{
+                opacity: 1;
+                transform: translateX(0%);
+            }
+          }
+         section.logo-youtub{
+            width: 55%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: animation2 1.5s;
+         }
+          @keyframes animation2 {
+            0%{
+                opacity: 0;
+                transform: translateX(50%);
+            }
+            100%{
+                opacity: 1;
+                transform: translateX(0%);
+            }
+          }
+         section.logo-youtub:hover{
+            transform: scale(1.04);
+         }
+         button{
+            padding: 15px 10px;
+            width: 25%;
+            outline: none;
+            border: 1px solid rgb(255, 255, 255);
+            background-color: red;
+            color: white;
+            border-radius: 3px;
+            opacity: 0.8;
+         }
+         button:hover{
+            color: black;
+            background-color: red;
+            transform: scale(1.07);
+            transition: 0.5s;
+         }
+         .video-youtube{
+            margin-top: 15px;
+         }
+         .video-youtube h1{
+            font-size: 40px;
+         }
+         .conteneur-trai{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-items: center;
+            animation: animation3 1s;
+         }
+          @keyframes animation3 {
+            0%{
+                opacity: 0;
+                transform: translateY(70%);
+            }
+            100%{
+                opacity: 1;
+                transform: translateY(0%);
+            }
+          }
+         .trai1{
+            background-color: red;
+            height: 3px;
+            width: 15%;
+            margin-right: 3%;
+         }
+         .trai2{
+            background-color: red;
+            height: 3px;
+            width: 15%;
+            margin-left: 3%;
+         }
+         .video-conteneur{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
+            background-color: whitesmoke;
+            animation: apparition linear 1s;
+            animation-timeline: view();
+            animation-range-start: cover 0%;
+            animation-range-end: cover 20%;
+            transition: all 1s;
+         }
+         @keyframes apparition {
+            0%{
+                transform: scale(0);
+                opacity: 0;
+            }
+            100%{
+                transform: scale(1);
+                opacity: 1;
+            }
+         }
+         .videos:hover{
+             transform: scale(1.05);
+         }
+         .videos{
+            margin: 10px;
+            background-color: whitesmoke;
+            font-family: monospace;
+         }
+         .videos h1,h2{
+            margin-left: 20px;
+         }
+         .videos h1{
+            color: rgb(208, 0, 0);
+         }
+/* *****************************Footer******************************** */
+         footer{
+            height: 25vh;
+            background-color: rgb(23, 23, 23);
+            font-style: italic;
+            display: block;
+        }
+        .email{
+           text-align: center;
+           color: white;
+           opacity: 0.6;
+           font-size: 2.5rem;
+           margin-top: 20px;
+        }
+        marquee{
+            margin-top: 30px;
+            color: white;
+            font-size: large;
+            background-color: black;
+        }
+        h3{
+            opacity: 0.6;
+            color: white;
+            text-align: center;
+        }
+        button a{
+            color: white;
+            padding: 15px 10px;
+        }
+         button a:hover{
+            background-color: red;
+        }
+/* *****************************Media******************************** */
+
+        @media screen and (max-width: 950px) {
+            .video-conteneur{
+                display: flex;
+                flex-direction: column;
+            }
+           
+            .conteneur{
+                display: flex;
+                flex-direction: column;
+            }
+            section.un-mot{
+                width: 90%;
+                vertical-align: bottom;
+                margin-top: 10px;
+            }
+            section.logo-youtub{
+                width: 90%;
+            }
+            .trai1{
+            height: 3px;
+            width: 20%;
+           }
+            .trai2{
+                height: 3px;
+                width: 20%;
+            }
+            .videos{
+                width: 60%;
+                animation: apparition linear 1s;
+                animation-timeline: view();
+                animation-range-start: cover 0%;
+                animation-range-end: cover 10%;
+                transition: 1s;
+            }
+            main{
+                background-color: whitesmoke;
+            }
+            iframe{
+                width: 560px;
+                height: 300px;
+            }
+        }
+         @media screen and (max-width: 930px) {
+            iframe{
+                width: 500px;
+                height: 300px;
+                display: flex;
+                justify-content: center;
+                margin-left: -5%;
+            }
+             .trai1{
+            height: 3px;
+            width: 24%;
+           }
+            .trai2{
+                height: 3px;
+                width: 24%;
+            }
+        }
+        @media screen and (max-width: 781px) {
+           
+             .trai1{
+            height: 3px;
+            width: 26%;
+           }
+            .trai2{
+                height: 3px;
+                width: 26%;
+            }
+        }
+        @media screen and (max-width: 730px) {
+            iframe{
+                width: 500px;
+                height: 300px;
+                display: flex;
+                justify-content: center;
+                margin-left: -13%;
+
+            }
+            .trai1{
+            height: 3px;
+            width: 28%;
+           }
+            .trai2{
+                height: 3px;
+                width: 28%;
+            }
+            
+         }
+         @media screen and (max-width: 644px) {
+             iframe{
+                width: 500px;
+                height: 300px;
+                display: flex;
+                justify-content: center;
+                margin-left: -20%;
+
+            }
+          }
+          @media screen and (max-width: 593px) {
+             iframe{
+                width: 500px;
+                height: 300px;
+                display: flex;
+                justify-content: center;
+                margin-left: -25%;
+
+            }
+             .trai1{
+            height: 3px;
+            width: 36%;
+           }
+            .trai2{
+                height: 3px;
+                width: 36%;
+            }
+          }
+        @media screen and (max-width: 552px) {
+            ul{
+                height: 100vh;
+                background-color: black;
+                position: relative;
+                width: 100%;
+                left: -100%;
+            }
+            iframe{
+                width: 450px;
+                height: 300px;
+                display: flex;
+                justify-content: center;
+                margin-left: -27%;
+
+            }
+            li{
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                justify-items: center;
+                padding-top: 50px;
+            }
+            a{
+                color: white;
+            }
+            .menu{
+                display: flex;
+            }
+            #check:checked~ul{
+                left: 0%;
+            }
+        }
+        @media screen and (max-width: 550px) {
+                .email{
+                    font-size: 1.5rem;
+                }
+        }
+         @media screen and (max-width: 526px) {
+              button{
+                width: 40%;
+            }
+          }
+
+        @media screen and (max-width: 500px) {
+             iframe{
+                width: 400px;
+                height: 300px;
+                display: flex;
+                justify-content: center;
+                margin-left: -25%;
+
+            }
+          }
+           @media screen and (max-width: 492px) {
+            .trai1{
+            height: 3px;
+            width: 40%;
+           }
+            .trai2{
+                height: 3px;
+                width: 40%;
+            }
+             iframe{
+                width: 380px;
+                height: 260px;
+                display: flex;
+                justify-content: center;
+                margin-left: -25%;
+
+            }
+          }
+           @media screen and (max-width: 342px) {
+                .email{
+                    font-size: 1rem;
+                }
+        }
+           @media screen and (max-width: 432px) {
+             .trai1{
+            height: 3px;
+            width: 46%;
+           }
+            .trai2{
+                height: 3px;
+                width: 46%;
+            }
+            .video-youtube h1{
+                font-size: 30px;
+            }
+             iframe{
+                width: 340px;
+                height: 240px;
+                display: flex;
+                justify-content: center;
+                margin-left: -25%;
+            }
+          }
+           @media screen and (max-width: 385px) {
+                .email{
+                    font-size: 1rem;
+                }
+                iframe{
+                width: 300px;
+                height: 200px;
+                display: flex;
+                justify-content: center;
+                margin-left: -25%;
+            }
+        }
+    </style>
+    <title>Raven Pro Lyrics</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <label id="logo">Rp-<b class="couleur-rouge">lyric</b></label>
+            <input id="check" type="checkbox">
+            <label for="check"><img class="menu" src="menu-bar.png" alt="images/png" width="50px"></label>
+            <ul>
+                <li><a class="active"  href="index.html">Accueil</a></li>
+                <li><a href="A-propos.html">A propos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="conteneur">
+           <section class="un-mot">
+                <h1>L'univer musical <br> <b class="couleur-rouge">Raven Pro Lyrics</b></h1>
+                <P>
+                    Bienvenue sur Raven Pro Lyrics, l'ultime destination pour 
+                    les passionnés de paroles de chansons. Explorez un univers de mots et de mélodies,
+                    plongez dans les significations cachées derrière chaque ligne et découvrez la poésie
+                    qui se cache dans chaque refrain. Rejoignez notre communauté de mélomanes et partagez 
+                    votre amour pour les paroles qui font vibrer nos âmes. Bienvenue dans l'art captivant des mots en musique.
+                </P>
+                <button type="button"><a href="https://www.youtube.com/@RavenProLyrics" target="_blank">SUIVEZ NOUS</a></button>
+           </section>
+
+           <section class="logo-youtub">
+                 <img src="295129.png" alt="" width="72%">
+           </section>
+        </div>
+
+        <section class="video-youtube">
+            <div class="conteneur-trai">
+                <div class="trai1"></div>
+                <h1>Nos videos</h1>
+                <div class="trai2"></div>
+            </div>
+            <div class="video-conteneur" id="Nos-Video">
+                <div class="videos">
+                     <div class="v-ifram">
+                           <iframe width="381" height="243" src="https://www.youtube.com/embed/WcKsKkBsMmc?si=93Vxe9jfrArXkJHH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                     </div>
+                     <h1>Jayel</h1>
+                         <h2>Sans toi (Paroles/Lyrics)</h2> 
+                </div>
+
+                 <div class="videos">
+                    <div class="v-ifram">
+                        <iframe width="381" height="243" src="https://www.youtube.com/embed/v42Unj6oHrE?si=t
+                        OreDjiLT-AruBOK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+                         gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                     </div>
+                     <h1>Hiro</h1>
+                         <h2>Fais ça bien (Paroles/Lyrics)</h2> 
+                </div>
+
+                 <div class="videos">
+                    <div class="v-ifram">
+                        <iframe width="381" height="243" src="https://www.youtube.com/embed/ytRJdCihZ2Y?si=GQThjj-rmeSeXqCh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                     </div>
+                     <h1>Goulam</h1>
+                         <h2>Ta main (Paroles/Lyrics)</h2> 
+                </div>
+            </div>
+
+            <div class="video-conteneur">
+                <div class="videos">
+                     <div class="v-ifram">
+                          <iframe width="381" height="243" src="https://www.youtube.com/embed/BAdZOkLt0fg?si=JQE2W88xHy47rT8a" title="YouTube video player" 
+                          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
+                          picture-in-picture; web-share" allowfullscreen></iframe>
+                     </div>
+                     <h1>Ks bloom</h1>
+                         <h2>A pas toi (Paroles/Lyrics)</h2> 
+                </div>
+
+                 <div class="videos">
+                    <div class="v-ifram">
+                       <iframe width="381" height="243" src="https://www.youtube.com/embed/c7MuiwdOHMM?si=mYIj_QD7-ruSywiP"
+                        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
+                         picture-in-picture; web-share" allowfullscreen></iframe>
+                     </div>
+                     <h1>Hiro ft @naza </h1>
+                         <h2>Dis moi (Paroles/Lyrics)</h2> 
+                </div>
+
+                 <div class="videos">
+                    <div class="v-ifram">
+                        <iframe width="381" height="243" src="https://www.youtube.com/embed/X7t1U7VqWMw?si=hwSvQofcgp78Vj8W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                     </div>
+                     <h1>Axel merryl</h1>
+                         <h2>Embrassé la marié (Paroles/Lyrics)</h2> 
+                </div>
+            </div>
+
+            <div class="video-conteneur">
+                <div class="videos">
+                     <div class="v-ifram">
+                        <iframe width="381" height="243" src="https://www.youtube.com/embed/UGt-QSNkeTY?si=QPFo1SoLHaDzJniY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                     </div>
+                     <h1>The 9ine x Ruby</h1>
+                         <h2>Obsessed with me(Paroles/Lyrics)</h2> 
+                </div>
+
+                 <div class="videos">
+                    <div class="v-ifram">
+                       <iframe width="381" height="243" src="https://www.youtube.com/embed/eaguPDaTOQg?si=1pR-w1RmP2Xd5FwM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                     </div>
+                     <h1>Sidiki ft Gazo</h1>
+                         <h2>Terminus (Paroles/Lyrics)</h2> 
+                </div>
+
+                 <div class="videos">
+                    <div class="v-ifram">
+                           <iframe width="381" height="243" src="https://www.youtube.com/embed/L06i6eQUt9U?si=2886Wmoj3vChjiVY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                     </div>
+                     <h1>Ninho</h1>
+                         <h2>Freestyle LVL UP 1 (Paroles/Lyrics)</h2>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+          <h1 class="email">E-mail: Fadelragienicolas@gmail.com</h2></h1>
+          <h1 class="email">Tel: 01-43-20-85-29</h2></h1>
+          <h3>Raven Pro Lyrics &copy; 2023-2024</h3>
+          <marquee behavior="" direction="">Merci de nous faire confiance !</marquee>
+    </footer>
+</body>
+</html>
